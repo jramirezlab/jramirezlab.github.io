@@ -1,0 +1,79 @@
+baseURL = "https://ramirezlab.dev/"
+languageCode = "en-us"
+title = "Ramirez Lab"
+theme = "PaperMod"
+[pagination]
+  pagerSize = 10
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+
+[params]
+  env = "production"
+  description = "AI Infrastructure · GPU Platform Engineering · Agentic Systems"
+  author = "Jaime Ramirez"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = false
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  hideSummary = false
+
+  [params.homeInfoParams]
+    Title = "Jaime Ramirez"
+    Content = """
+AI infrastructure engineer building production agentic systems, GPU compute platforms, and secure automation — from bare metal to autonomous delivery.
+
+Currently exploring opportunities in AI platform engineering, GPU/datacenter infrastructure, and agentic AI systems.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/jramirezlab"
+
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://youtube.com/@JaimeTechBuilds"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:jaime@ramirezlab.dev"
+
+[params.cover]
+  hidden = false
+  hiddenInList = false
+  hiddenInSingle = false
+
+[params.assets]
+  disableFingerprinting = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 20
