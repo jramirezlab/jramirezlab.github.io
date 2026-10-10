@@ -26,4 +26,4 @@ If my work is relevant to what you're building, I'd welcome a conversation.
 
 - **GitHub:** [github.com/jramirezlab](https://github.com/jramirezlab)
 - **YouTube:** [JaimeTechBuilds](https://youtube.com/@JaimeTechBuilds)
-- **Email:** jaime@ramirezlab.dev
+- **Email:** jaimeramirez760@outlook.com
