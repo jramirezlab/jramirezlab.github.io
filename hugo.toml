@@ -15,7 +15,7 @@ buildExpired = false
 
 [params]
   env = "production"
-  description = "AI Infrastructure · GPU Platform Engineering · Agentic Systems"
+  description = "AI Infrastructure · GPU Platform Engineering · Governed Agentic Systems"
   author = "Jaime Ramirez"
   defaultTheme = "auto"
   ShowReadingTime = true
@@ -32,9 +32,11 @@ buildExpired = false
   hideSummary = false
 
   [params.homeInfoParams]
-    Title = "Jaime Ramirez"
+    Title = "Engineering Secure AI Systems from Bare Metal to Governed Execution"
     Content = """
-AI infrastructure engineer building production agentic systems, GPU compute platforms, and secure automation — from bare metal to autonomous delivery.
+Infrastructure and security engineer building governed multi-agent AI platforms, GPU compute infrastructure, and production automation.
+
+I design systems that combine AI orchestration, workload isolation, human approval gates, controlled execution, and verifiable outcomes — on hardware I provision, configure, and operate.
 
 Currently exploring opportunities in AI platform engineering, GPU/datacenter infrastructure, and agentic AI systems.
 """

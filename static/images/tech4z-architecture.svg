@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13">
+  <defs>
+    <style>
+      .layer-box { rx: 8; ry: 8; stroke-width: 1.5; }
+      .layer-title { font-weight: 600; font-size: 14px; }
+      .layer-detail { font-size: 12px; fill: #6b7280; }
+      .node-box { rx: 6; ry: 6; stroke-width: 1; }
+      .node-title { font-weight: 600; font-size: 12px; }
+      .node-detail { font-size: 11px; fill: #6b7280; }
+      .connector { stroke-width: 2; stroke-dasharray: none; fill: none; }
+      .arrow { fill: #94a3b8; }
+
+      /* Light theme */
+      .layer-box { fill: #f8fafc; stroke: #cbd5e1; }
+      .layer-title { fill: #1e293b; }
+      .node-box { fill: #ffffff; stroke: #e2e8f0; }
+      .node-title { fill: #1e293b; }
+      .connector { stroke: #94a3b8; }
+      .gpu-nvidia { fill: #ecfdf5; stroke: #6ee7b7; }
+      .gpu-amd { fill: #fef2f2; stroke: #fca5a5; }
+      .approval-box { fill: #fffbeb; stroke: #fbbf24; }
+      .approval-title { fill: #92400e; }
+
+      /* Dark theme support */
+      @media (prefers-color-scheme: dark) {
+        .layer-box { fill: #1e293b; stroke: #475569; }
+        .layer-title { fill: #e2e8f0; }
+        .layer-detail { fill: #94a3b8; }
+        .node-box { fill: #0f172a; stroke: #334155; }
+        .node-title { fill: #e2e8f0; }
+        .node-detail { fill: #94a3b8; }
+        .connector { stroke: #64748b; }
+        .arrow { fill: #64748b; }
+        .gpu-nvidia { fill: #064e3b; stroke: #059669; }
+        .gpu-amd { fill: #450a0a; stroke: #dc2626; }
+        .approval-box { fill: #451a03; stroke: #d97706; }
+        .approval-title { fill: #fbbf24; }
+      }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" class="arrow"/>
+    </marker>
+  </defs>
+
+  <!-- Delivery Layer -->
+  <rect x="40" y="20" width="640" height="68" class="layer-box"/>
+  <text x="360" y="44" text-anchor="middle" class="layer-title">Delivery Layer</text>
+  <text x="360" y="62" text-anchor="middle" class="layer-detail">n8n Workflows → Metricool → Platform APIs · Monitoring Alerts</text>
+
+  <!-- Connector -->
+  <line x1="360" y1="88" x2="360" y2="108" class="connector" marker-end="url(#arrowhead)"/>
+
+  <!-- Owner Approval Gate -->
+  <rect x="160" y="108" width="400" height="50" class="layer-box approval-box"/>
+  <text x="360" y="133" text-anchor="middle" class="layer-title approval-title">Owner Approval Gate</text>
+  <text x="360" y="148" text-anchor="middle" class="layer-detail">Human review before external publishing</text>
+
+  <!-- Connector -->
+  <line x1="360" y1="158" x2="360" y2="178" class="connector" marker-end="url(#arrowhead)"/>
+
+  <!-- Orchestration Layer -->
+  <rect x="40" y="178" width="640" height="90" class="layer-box"/>
+  <text x="360" y="202" text-anchor="middle" class="layer-title">Orchestration Layer — Multi-Agent Pipeline</text>
+  <!-- Pipeline steps -->
+  <rect x="65" y="214" width="100" height="36" class="node-box"/>
+  <text x="115" y="230" text-anchor="middle" class="node-title">Crawl4AI</text>
+  <text x="115" y="244" text-anchor="middle" class="node-detail">Web Intelligence</text>
+
+  <line x1="165" y1="232" x2="185" y2="232" class="connector" marker-end="url(#arrowhead)"/>
+
+  <rect x="190" y="214" width="130" height="36" class="node-box"/>
+  <text x="255" y="230" text-anchor="middle" class="node-title">CEO Agent</text>
+  <text x="255" y="244" text-anchor="middle" class="node-detail">Ollama qwen2.5:32b</text>
+
+  <line x1="320" y1="232" x2="340" y2="232" class="connector" marker-end="url(#arrowhead)"/>
+
+  <rect x="345" y="214" width="100" height="36" class="node-box"/>
+  <text x="395" y="230" text-anchor="middle" class="node-title">Guardrail</text>
+  <text x="395" y="244" text-anchor="middle" class="node-detail">Quality &amp; Policy</text>
+
+  <line x1="445" y1="232" x2="465" y2="232" class="connector" marker-end="url(#arrowhead)"/>
+
+  <rect x="470" y="214" width="90" height="36" class="node-box"/>
+  <text x="515" y="230" text-anchor="middle" class="node-title">ComfyUI</text>
+  <text x="515" y="244" text-anchor="middle" class="node-detail">Generation</text>
+
+  <line x1="560" y1="232" x2="580" y2="232" class="connector" marker-end="url(#arrowhead)"/>
+
+  <rect x="585" y="214" width="80" height="36" class="node-box"/>
+  <text x="625" y="230" text-anchor="middle" class="node-title">Delivery</text>
+  <text x="625" y="244" text-anchor="middle" class="node-detail">n8n → APIs</text>
+
+  <!-- Connector -->
+  <line x1="360" y1="268" x2="360" y2="295" class="connector" marker-end="url(#arrowhead)"/>
+
+  <!-- Compute Layer -->
+  <rect x="40" y="295" width="640" height="130" class="layer-box"/>
+  <text x="360" y="319" text-anchor="middle" class="layer-title">Compute Layer — GPU Passthrough · Proxmox VE · IOMMU / vfio-pci</text>
+
+  <!-- Dev Node -->
+  <rect x="75" y="332" width="165" height="76" class="node-box gpu-nvidia"/>
+  <text x="157" y="352" text-anchor="middle" class="node-title">Dev Node</text>
+  <text x="157" y="368" text-anchor="middle" class="node-detail">NVIDIA RTX 5070 Ti</text>
+  <text x="157" y="384" text-anchor="middle" class="node-detail">Training &amp; Experimentation</text>
+  <text x="157" y="400" text-anchor="middle" class="node-detail">LXC · Open Kernel Modules</text>
+
+  <!-- Inference Node -->
+  <rect x="278" y="332" width="165" height="76" class="node-box gpu-amd"/>
+  <text x="360" y="352" text-anchor="middle" class="node-title">Inference Node</text>
+  <text x="360" y="368" text-anchor="middle" class="node-detail">AMD RX 7900 XTX</text>
+  <text x="360" y="384" text-anchor="middle" class="node-detail">Ollama · LLM Serving</text>
+  <text x="360" y="400" text-anchor="middle" class="node-detail">32B GPU / 7B CPU Tiered</text>
+
+  <!-- Generation Node -->
+  <rect x="480" y="332" width="165" height="76" class="node-box gpu-nvidia"/>
+  <text x="562" y="352" text-anchor="middle" class="node-title">Generation Node</text>
+  <text x="562" y="368" text-anchor="middle" class="node-detail">NVIDIA RTX 5060 Ti</text>
+  <text x="562" y="384" text-anchor="middle" class="node-detail">ComfyUI · Production</text>
+  <text x="562" y="400" text-anchor="middle" class="node-detail">Controlled Parameters</text>
+
+  <!-- Connector -->
+  <line x1="360" y1="425" x2="360" y2="452" class="connector" marker-end="url(#arrowhead)"/>
+
+  <!-- Storage & Services -->
+  <rect x="40" y="452" width="640" height="108" class="layer-box"/>
+  <text x="360" y="476" text-anchor="middle" class="layer-title">Storage &amp; Services</text>
+
+  <rect x="65" y="488" width="140" height="56" class="node-box"/>
+  <text x="135" y="508" text-anchor="middle" class="node-title">Backup</text>
+  <text x="135" y="522" text-anchor="middle" class="node-detail">PBS · ZFS Mirror</text>
+  <text x="135" y="536" text-anchor="middle" class="node-detail">Nightly Offsite Sync</text>
+
+  <rect x="225" y="488" width="140" height="56" class="node-box"/>
+  <text x="295" y="508" text-anchor="middle" class="node-title">Observability</text>
+  <text x="295" y="522" text-anchor="middle" class="node-detail">Grafana · Prometheus</text>
+  <text x="295" y="536" text-anchor="middle" class="node-detail">Pipeline Health</text>
+
+  <rect x="385" y="488" width="140" height="56" class="node-box"/>
+  <text x="455" y="508" text-anchor="middle" class="node-title">Version Control</text>
+  <text x="455" y="522" text-anchor="middle" class="node-detail">Gitea (Self-Hosted)</text>
+  <text x="455" y="536" text-anchor="middle" class="node-detail">Configs · Runbooks</text>
+
+  <rect x="545" y="488" width="120" height="56" class="node-box"/>
+  <text x="605" y="508" text-anchor="middle" class="node-title">Asset Mgmt</text>
+  <text x="605" y="522" text-anchor="middle" class="node-detail">NetBox · DCIM</text>
+  <text x="605" y="536" text-anchor="middle" class="node-detail">Network Docs</text>
+</svg>
